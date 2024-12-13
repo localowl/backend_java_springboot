@@ -13,7 +13,9 @@ public class DemoController {
 
     @Autowired // this annotation tells Spring to inject a dependency
     public DemoController(@Qualifier("baseballCoach") Coach theCoach) {
-        //@Qualifier annotation is used when more than one class implements an interface  
+        //@Qualifier annotation is used when more than one class implements an interface
+        // However, if we use the @Qualifier annotation to specify another class,
+        // the class specified by @Qualifier will override the class marked with @Primary.
         myCoach = theCoach;
     }
 
