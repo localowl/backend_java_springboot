@@ -10,6 +10,11 @@ public class DemoController {
     // define a private field for the dependency
     private Coach myCoach;
 
+    //field injection is not recommended by spring.io dev team
+    //makes the code harder to unit test
+    /*@Autowired
+    private Coach coach;  -> field injection example*/
+
     // define a setter method for dependency injection
     @Autowired // this annotation tells Spring to inject a dependency
     public void setCoach(Coach theCoach) {
