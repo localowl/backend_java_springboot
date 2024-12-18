@@ -26,7 +26,8 @@ public class CrudDemoApplication {
 			//queryStudentsByLastName(studentDAO);
 			//updateStudent(studentDAO);
 			//deleteStudent(studentDAO);
-			deleteAllStudents(studentDAO);
+			//deleteAllStudents(studentDAO);
+			createMultipleStudents(studentDAO);
 		};
 	}
 
@@ -41,6 +42,16 @@ public class CrudDemoApplication {
 		System.out.println("Student Generated Id: " + student.getId());
 	}
 
+	private void createMultipleStudents(StudentDAO studentDAO){
+		Student student1 = new Student("Merve", "Keser", "merve@localowl.com");
+		Student student2 = new Student("Fatma", "Önal", "fatma@localowl.com");
+
+		studentDAO.save(student1);
+		studentDAO.save(student2);
+
+		System.out.println("First Student " + student1.getId());
+		System.out.println("Second Student " + student2.getId());
+	}
 	private void readStudent(StudentDAO studentDAO){
 		//create the student object
 		Student student = new Student("Fatma", "Önal", "fatma@localowl.com");
